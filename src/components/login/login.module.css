@@ -1,0 +1,158 @@
+.login {
+    display: flex;
+}
+
+.login .form_content {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90vh;
+    margin: 3rem 1rem;
+}
+
+.login .form_content form {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.login .form_content form .form_content_header {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1.3rem;
+}
+
+.login .form_content form .form_content_group {
+    padding: .2rem;
+    margin-bottom: 1.3rem;
+}
+
+.login .form_content form .form_content_group input {
+    padding-left: 1rem;
+    width: 100%;
+    height: 4.3rem;
+    border: none;
+    outline: 3px solid var(--clightblue);
+    border-radius: .3rem;
+    margin-bottom: .7rem;
+    box-shadow: 0px 6px 7px var(--clightblue);
+    /*background: blue;*/
+}
+
+.login .form_content form .form_content_group .label {
+    display: block;
+    margin-bottom: .7rem;
+    font-size: 1.4rem;
+}
+
+.login .form_content form .form_content_group input[type='submit'] {
+    outline: none;
+    font-size: 2rem;
+    background: var(--cblack);
+    color: white;
+    box-shadow: var(--shadowBlack);
+    cursor: pointer;
+}
+
+.login .form_content form .form_content_group div span {
+    color: var(--cred);
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.login .form_content form .form_content_moreOption .line {
+    width: 100%;
+    height: .2rem;
+    background: var(--cblack);
+    border-radius: .3rem;
+    position: relative;
+}
+
+.login .form_content form .form_content_moreOption .line:after {
+    content: 'or';
+    position: absolute;
+    background: white;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    /*width: 2rem;*/
+    /*height: 2rem;*/
+    padding: .2rem;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+}
+
+.login .form_content form .form_content_moreOption .loginOption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    gap: 1rem;
+    margin-top: 1.8rem;
+}
+
+.login .form_content form .form_content_moreOption .loginOption
+.form_content_moreOption_item img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.login .form_content form .form_content_moreOption .loginOption
+.form_content_moreOption_item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    border-radius: .3rem;
+    box-shadow: var(--shadowBlack);
+    gap: .4rem;
+    text-transform: capitalize;
+}
+
+.face {
+    background: linear-gradient(263.05deg, #B4E8FF 7.98%, rgba(180, 232, 255, 0) 105.88%);
+}
+
+.google {
+    background: linear-gradient(247.96deg, #F13D1C 50.6%, rgba(255, 255, 255, 0) 91.08%);
+}
+
+.login .more .moreO {
+
+    background: var(--clightpur);
+    padding: .5rem;
+    border-radius: .4rem;
+    color: var(--cpur);
+}
+
+.login .login_image {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .login .form_content {
+        flex-basis: 40%;
+        height: auto;
+    }
+
+    .login .form_content form, .login .form_content .more {
+        min-width: 35rem;
+        max-width: 40rem;
+    }
+
+    .login .login_image {
+        flex-basis: 60%;
+        height: 100vh;
+        display: flex;
+        /*border-radius: 2rem 0 0 2rem;*/
+
+    }
+
+    .login .login_image img {
+        border-radius: inherit;
+        object-fit: cover;
+        height: 100%;
+    }
+}
