@@ -1,12 +1,19 @@
 import React from "react";
-import { RouterProvider } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { RouterApp } from "./Router";
-
+import { AuthProvider } from "./context/authContext";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <RouterProvider router={RouterApp}></RouterProvider>
+    <AuthProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </AuthProvider>
   </>
 );

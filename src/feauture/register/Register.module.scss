@@ -1,0 +1,94 @@
+.auth {
+  width: 100%;
+  min-height: 100vh;
+  // background: blue;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa94;
+    backdrop-filter: blur(1rem);
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
+    filter: blur(10rem);
+    width: 50%;
+    height: 50%;
+    z-index: -2;
+    animation: authBlur 1.5s infinite alternate linear;
+    transition: 0.4s ease-in-out;
+
+    @keyframes authBlur {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.5);
+      }
+    }
+  }
+
+  &_content {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: unset;
+
+    .image {
+      width: 100%;
+      margin-bottom: 0.8rem;
+      img {
+        width: 10rem;
+        border-radius: 50%;
+
+        object-fit: contain;
+      }
+    }
+
+    .msg {
+      margin-bottom: 2.8rem;
+      text-align: center;
+    }
+
+    &_form {
+      &_forget{
+        justify-content: flex-end;
+        font-size: 1.2rem;
+        color: var(--cpur70);
+        margin-top: 2rem;
+      }
+    }
+    &_switch {
+      margin-top: 2rem;
+      gap: 0.2rem;
+      width: 100%;
+
+      span {
+        color: blue;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &_content {
+      width: 40rem;
+      background: rgba(199, 194, 194, 0.343);
+      backdrop-filter: blur(1rem);
+      border-radius: 0.8rem;
+      padding: 3rem 2rem;
+      // box-shadow: var(--shadowBlack20);
+    }
+  }
+}
